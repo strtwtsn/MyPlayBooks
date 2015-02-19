@@ -12,6 +12,6 @@
 
     
     - lineinfile: dest=/etc/tomcat7/tomcat-users.xml insertbefore="</tomcat-users>" line='<role rolename="manager-gui"/>'
-    - lineinfile: dest=/etc/tomcat7/tomcat-users.xml insertbefore="</tomcat-users>" line='<user username="admin" password="jovnufjox" roles="manager-gui"/>'
+    - lineinfile: dest=/etc/tomcat7/tomcat-users.xml insertbefore="</tomcat-users>" line='<user username="*****" password="*******" roles="manager-gui"/>'
     
     - service: name=tomcat7 state=restarted 
