@@ -1,0 +1,10 @@
+---
+- hosts: host1
+  tasks:
+    - name: Creates directory
+      file: path=/usr/share/tomcat7/webapps state=directory
+
+    - name: Copy file to remote server
+      copy: src=/home/ubuntu/MyPlayBooks/javaapp/app/test.txt dest=/usr/share/tomcat7/webapps/test.txt
+
+

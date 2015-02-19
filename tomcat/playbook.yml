@@ -1,0 +1,17 @@
+# playbook.yml
+---
+- hosts: host1
+  tasks:
+    - name: 1. install tomcat7
+      apt: name=tomcat7 state=present
+   
+
+    - name: 2. install tomcat7-admin
+      apt: name=tomcat7-admin state=present
+
+
+    
+    - lineinfile: dest=/etc/tomcat7/tomcat-users.xml insertbefore="</tomcat-users>" line='<role rolename="manager-gui"/>'
+    - lineinfile: dest=/etc/tomcat7/tomcat-users.xml insertbefore="</tomcat-users>" line='<user username="admin" password="jovnufjox" roles="manager-gui"/>'
+    
+    - service: name=tomcat7 state=restarted 
